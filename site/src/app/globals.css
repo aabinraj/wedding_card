@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  /* Wedding colour palette */
+  --color-theme-soft: #FBEFEF;
+  --color-theme-pink: #FFE2E2;
+  --color-theme-rose: #F5CBCB;
+  --color-theme-mauve: #C5B3D3;
+  --color-theme-dark: #3D2B2B;
+  --color-theme-blush: #FFF5F5;
+
+  /* Custom fonts */
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #FBEFEF;
+  color: #3D2B2B;
+  font-family: "Outfit", sans-serif;
+}
