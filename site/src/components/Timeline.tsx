@@ -15,7 +15,7 @@ export const Timeline = () => {
 
   return (
     <section
-      className="my-8 p-6 md:p-8 rounded-2xl shadow-lg"
+      className="my-8 p-4 md:p-8 rounded-2xl shadow-lg"
       style={{ background: "linear-gradient(135deg, #FFF5F5 0%, #F5E6F0 100%)" }}
     >
       <div className="text-center mb-8">
@@ -42,7 +42,7 @@ export const Timeline = () => {
           {events.map((e, i) => (
             <motion.div
               key={i}
-              className="relative flex items-start gap-4 pl-14 md:pl-16"
+              className="relative flex items-start gap-3 pl-12 md:pl-16"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -50,7 +50,7 @@ export const Timeline = () => {
             >
               {/* Timeline dot */}
               <div
-                className="absolute left-4 md:left-6 w-5 h-5 rounded-full flex items-center justify-center text-xs"
+                className="absolute left-3 md:left-6 w-5 h-5 rounded-full flex items-center justify-center text-xs"
                 style={{
                   background: "linear-gradient(135deg, #F5CBCB, #C5B3D3)",
                   boxShadow: "0 0 12px rgba(197,179,211,0.4)",
@@ -70,7 +70,7 @@ export const Timeline = () => {
                 <h4 className="text-lg font-great-vibes" style={{ color: "#8B6F7E" }}>
                   {e.title}
                 </h4>
-                <p className="text-sm font-outfit" style={{ color: "#5A3D4A" }}>
+                <p className="text-xs font-outfit" style={{ color: "#5A3D4A" }}>
                   {e.description}
                 </p>
               </div>

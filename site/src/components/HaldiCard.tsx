@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
  */
 export const HaldiCard = () => {
   return (
-    <section className="my-10 rounded-3xl overflow-hidden shadow-2xl relative w-full aspect-[4/5] md:aspect-[3/4]">
+    <section className="my-10 rounded-3xl overflow-hidden shadow-2xl relative w-full" style={{ aspectRatio: "4/5" }}>
       {/* Background Image */}
       <img
         src="/assets/images/haldi.webp"
@@ -21,7 +21,7 @@ export const HaldiCard = () => {
       <div className="absolute inset-0 bg-white/20" />
 
       {/* Content Container positioned high up in the brush stroke */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-start pt-[22%] px-6 md:px-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-start pt-[22%] px-4">
         <motion.div
           className="w-full text-center relative z-10"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -31,22 +31,22 @@ export const HaldiCard = () => {
         >
           <div className="flex items-center justify-center gap-2 mb-1">
             <div className="h-[1px] w-6 bg-[#8B6F3E]/80" />
-            <span className="text-[9px] md:text-[10px] tracking-[0.25em] uppercase font-outfit text-[#5A4A2A] font-bold drop-shadow-sm">
+            <span className="text-[9px] tracking-[0.2em] uppercase font-outfit text-[#5A4A2A] font-bold drop-shadow-sm">
               Pre-Wedding
             </span>
             <div className="h-[1px] w-6 bg-[#8B6F3E]/80" />
           </div>
 
-          <h3 className="text-5xl md:text-6xl font-great-vibes mb-2 text-[#4A3A1A] drop-shadow-md">
+          <h3 className="text-[2.6rem] leading-tight font-great-vibes mb-2 text-[#4A3A1A] drop-shadow-md">
             Haldi Ceremony
           </h3>
           
-          <div className="font-outfit text-xs md:text-sm space-y-1 mb-3 text-[#4A3A1A] max-w-[85%] mx-auto drop-shadow-sm">
-            <p className="font-extrabold text-sm md:text-base tracking-wide">Bride&apos;s Residence</p>
-            <p className="font-bold opacity-90 text-[10px] md:text-[11px]">Punnakkaparambil house,<br/>Lokamaleswaram PO, Kodungallur</p>
+          <div className="font-outfit space-y-0.5 mb-3 text-[#4A3A1A] max-w-[90%] mx-auto drop-shadow-sm">
+            <p className="font-extrabold text-sm tracking-wide">Bride&apos;s Residence</p>
+            <p className="font-bold opacity-90 text-[10px]">Punnakkaparambil house,<br/>Lokamaleswaram PO, Kodungallur</p>
           </div>
           
-          <div className="inline-block px-4 py-1.5 rounded-full text-[10px] md:text-xs font-outfit font-extrabold tracking-wider shadow-md border border-[#D4A854]/50 bg-[#FFF9E6]/90 backdrop-blur-md text-[#5A4A2A]">
+          <div className="inline-block px-3 py-1.5 rounded-full text-[10px] font-outfit font-extrabold tracking-wide shadow-md border border-[#D4A854]/50 bg-[#FFF9E6]/90 backdrop-blur-md text-[#5A4A2A] whitespace-nowrap">
             20 Aug 2026 &nbsp;|&nbsp; 12:00 PM – 2:00 PM
           </div>
         </motion.div>

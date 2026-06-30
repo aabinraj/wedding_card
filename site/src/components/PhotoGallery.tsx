@@ -10,6 +10,8 @@ const images = [
   "/assets/images/gallerypic (2).jpeg",
   "/assets/images/gallerypic (3).jpeg",
   "/assets/images/gallerypic (4).jpeg",
+  "/assets/images/gallerypic (5).jpeg",
+  "/assets/images/gallerypic (6).jpeg"
 ];
 
 export const PhotoGallery = () => {
