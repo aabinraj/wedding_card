@@ -66,7 +66,7 @@ export const MainInvitation = () => {
 
           {/* Center Section: Names and Details - Tightly grouped to fit the inner border space */}
           <motion.div
-            className="absolute top-20 left-0 w-full flex flex-col items-center justify-start text-center px-6"
+            className="absolute top-17 left-0 w-full flex flex-col items-center justify-start text-center px-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
