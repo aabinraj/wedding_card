@@ -16,7 +16,7 @@ export const initAudio = () => {
   if (!bgAudio) {
     // background music file name as provided by the user "bgaudio"
     bgAudio = new Audio("/assets/audio/bgaudio.mp3");
-    bgAudio.loop = true;
+    bgAudio.loop = false; // play only once
     bgAudio.preload = "auto";
     bgAudio.volume = 0.5;
   }

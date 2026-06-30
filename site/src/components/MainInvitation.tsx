@@ -1,10 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import Particles from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import { tsParticles } from "@tsparticles/engine";
-import { flowerParticles } from "../lib/particlesConfig";
+import { FallingFlowers } from "./FallingFlowers";
 
 import { VenueCard } from "./VenueCard";
 import { BrideInfo } from "./BrideInfo";
@@ -28,12 +25,6 @@ const fadeUp = {
 };
 
 export const MainInvitation = () => {
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    loadFull(tsParticles).then(() => setInit(true));
-  }, []);
-
   return (
     <motion.div
       className="relative min-h-screen font-outfit pb-12"
@@ -42,14 +33,8 @@ export const MainInvitation = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Falling Flowers Particle Background */}
-      {init && (
-        <Particles
-          id="main-flowers"
-          options={flowerParticles}
-          className="absolute inset-0 pointer-events-none z-0"
-        />
-      )}
+      {/* Falling Flowers Background */}
+      <FallingFlowers />
 
       {/* Hero section: Thalikettu Main Invitation */}
       <div className="flex justify-center p-2 md:p-6 w-full relative z-10">
@@ -81,15 +66,12 @@ export const MainInvitation = () => {
               मङ्गलम् भगवान विष्णुः मङ्गलम् गरुड़ध्वजः ।<br />
               मङ्गलम् पुण्डरी काक्षः मङ्गलाय तनो हरिः ।।
             </p>
-            <p className="text-[7px] md:text-[8px] text-[#5A3D4A] tracking-wider mb-2 font-bold drop-shadow-md">
-              MANGALAM BHAGWAN VISHNU MANGALAM GARUDADWAJAH<br />
-              MANGALAM PUNDARIKAKSHAH MANGALAYA TANO HARIH
-            </p>
+          
           </motion.div>
 
           {/* Center Section: Names and Details - Tightly grouped to fit the inner border space */}
           <motion.div
-            className="absolute top-24 left-0 w-full flex flex-col items-center justify-start text-center px-6"
+            className="absolute top-16 left-0 w-full flex flex-col items-center justify-start text-center px-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}

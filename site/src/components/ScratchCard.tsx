@@ -1,9 +1,5 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import Particles from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import { tsParticles } from "@tsparticles/engine";
-import { heartSparkleParticles } from "../lib/particlesConfig";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
@@ -11,11 +7,36 @@ import { motion, AnimatePresence } from "framer-motion";
  * about 25% of the overlay. After that it triggers a burst of heart
  * particles and permanently reveals the live countdown timer.
  */
+
+const TimeBlock = ({ value, label }: { value: number; label: string }) => (
+  <div className="flex flex-col items-center mx-1">
+    <div className="w-14 h-16 sm:w-16 sm:h-20 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/90 to-[#FFF5F5]/80 shadow-[inset_0_1px_3px_rgba(255,255,255,1),0_4px_10px_rgba(139,111,126,0.15)] backdrop-blur-md border border-white/60 mb-2 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-1/2 bg-white/40" />
+      <AnimatePresence mode="popLayout">
+        <motion.span
+          key={value}
+          initial={{ y: 15, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -15, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-3xl sm:text-4xl font-outfit font-light text-[#5A3D4A] z-10"
+        >
+          {value.toString().padStart(2, "0")}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+    <span className="text-[10px] sm:text-xs font-outfit tracking-[0.2em] uppercase text-[#8B6F7E] font-medium">
+      {label}
+    </span>
+  </div>
+);
+
 export const ScratchCard = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    loadFull(tsParticles).then(() => setInit(true));
+    // init kept for future use
+    setInit(true);
   }, []);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -156,28 +177,7 @@ export const ScratchCard = () => {
     };
   }, [revealed]);
 
-  const TimeBlock = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center mx-1">
-      <div className="w-14 h-16 sm:w-16 sm:h-20 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/90 to-[#FFF5F5]/80 shadow-[inset_0_1px_3px_rgba(255,255,255,1),0_4px_10px_rgba(139,111,126,0.15)] backdrop-blur-md border border-white/60 mb-2 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1/2 bg-white/40" />
-        <AnimatePresence mode="popLayout">
-          <motion.span
-            key={value}
-            initial={{ y: 15, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -15, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="text-3xl sm:text-4xl font-outfit font-light text-[#5A3D4A] z-10"
-          >
-            {value.toString().padStart(2, "0")}
-          </motion.span>
-        </AnimatePresence>
-      </div>
-      <span className="text-[10px] sm:text-xs font-outfit tracking-[0.2em] uppercase text-[#8B6F7E] font-medium">
-        {label}
-      </span>
-    </div>
-  );
+
 
   return (
     <div className="relative w-full max-w-sm mx-auto my-8">
@@ -221,14 +221,24 @@ export const ScratchCard = () => {
 
       </div>
 
-      {/* Heart Sparkles Animation when revealed */}
-      {showHeart && init && (
-        <div className="absolute inset-0 pointer-events-none z-20">
-          <Particles
-            id="heart-sparkle"
-            options={heartSparkleParticles}
-            className="w-full h-full"
-          />
+      {/* Heart Burst Animation when revealed */}
+      {showHeart && (
+        <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <motion.span
+              key={i}
+              className="absolute text-2xl select-none"
+              style={{
+                left: `${10 + Math.random() * 80}%`,
+                top: `${10 + Math.random() * 80}%`,
+              }}
+              initial={{ opacity: 1, y: 0, scale: 0.5 }}
+              animate={{ opacity: 0, y: -80 - i * 10, scale: 1.5 }}
+              transition={{ duration: 1.5 + i * 0.1, ease: "easeOut" }}
+            >
+              {i % 2 === 0 ? "💖" : "✨"}
+            </motion.span>
+          ))}
         </div>
       )}
     </div>

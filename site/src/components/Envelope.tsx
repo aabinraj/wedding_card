@@ -41,7 +41,7 @@ export const Envelope = () => {
 
       {/* Envelope image with breathing animation */}
       <motion.div
-        className="relative w-72 h-72 md:w-96 md:h-96"
+        className="relative w-full max-w-lg aspect-square px-4 md:px-8"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         animate={{

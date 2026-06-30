@@ -21,7 +21,7 @@ export const VenueCard = () => {
       <div className="absolute inset-0 bg-white/20" />
 
       {/* Content Container positioned precisely in the upper archway space */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-start pt-1 px-6 md:px-10">
+      <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-start pt-3 px-6 md:px-10">
         <motion.div
           className="w-full text-center relative z-10"
           initial={{ opacity: 0, scale: 0.95 }}
