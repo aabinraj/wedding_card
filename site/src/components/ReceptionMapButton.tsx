@@ -3,17 +3,21 @@ import React from "react";
 import { motion } from "framer-motion";
 
 /**
- * Inline Google Maps embed showing the wedding venue.
+ * Inline Google Maps embed showing the reception venue.
+ * MSC Convention Centre, Meloor (Poolany, Thrissur, Kerala – PIN: 680311)
+ * Coordinates: 10.3168° N, 76.3533° E
  */
-export const MapButton = () => {
-  // Using a standard Google Maps embed URL for Sree Narayana Hall, Kodungallur
-  const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.471714442253!2d76.19632311479603!3d10.223450992700305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081bc13bb652b3%3A0xc0fb10c5bc6b8a82!2sSree%20Narayana%20Hall!5e0!3m2!1sen!2sin!4v1689600000000!5m2!1sen!2sin";
-  
-  // Direct link for the "Get Directions" button using standard search query
-  const directLink = "https://www.google.com/maps/search/?api=1&query=Sree+Narayana+Hall,+Pettumma,+Kodungallur,+Kerala"; 
+export const ReceptionMapButton = () => {
+  // Google Maps embed URL using the exact coordinates for MSC Convention Centre, Meloor
+  const embedUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0!2d76.3533!3d10.3168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDE5JzAwLjUiTiA3NsKwMjEnMTEuOSJF!5e0!3m2!1sen!2sin!4v1689600000001!5m2!1sen!2sin";
+
+  // Direct link to get directions to MSC Convention Centre
+  const directLink =
+    "https://www.google.com/maps/search/?api=1&query=MSC+Convention+Centre+Meloor+Poolany+Thrissur+Kerala";
 
   return (
-    <section 
+    <section
       className="my-12 p-6 md:p-8 rounded-3xl shadow-xl"
       style={{ background: "linear-gradient(135deg, #FFF5F5 0%, #F5E6F0 100%)" }}
     >
@@ -27,7 +31,7 @@ export const MapButton = () => {
         >
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
           <span className="text-xs tracking-[0.25em] uppercase font-outfit" style={{ color: "#C5B3D3" }}>
-            Venue Location
+            Reception Venue
           </span>
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
         </motion.div>
@@ -39,7 +43,7 @@ export const MapButton = () => {
           viewport={{ once: true, amount: 0.7 }}
           transition={{ duration: 0.5, delay: 0.12 }}
         >
-          Sree Narayana Hall
+          MSC Convention Centre
         </motion.h2>
         <motion.p
           className="font-outfit text-sm text-[#5A3D4A]"
@@ -48,26 +52,26 @@ export const MapButton = () => {
           viewport={{ once: true, amount: 0.7 }}
           transition={{ duration: 0.45, delay: 0.24 }}
         >
-          Pettumma, Kodungallur, Kerala
+          Meloor, Poolany, Thrissur, Kerala – 680311
         </motion.p>
       </div>
 
-      <motion.div 
+      <motion.div
         className="w-full rounded-2xl overflow-hidden shadow-inner border border-white"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
       >
-        <iframe 
-          src={embedUrl} 
-          width="100%" 
-          height="350" 
-          style={{ border: 0 }} 
-          allowFullScreen={true} 
-          loading="lazy" 
+        <iframe
+          src={embedUrl}
+          width="100%"
+          height="350"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Wedding Venue Map"
+          title="Reception Venue Map"
           className="bg-gray-100"
         />
       </motion.div>

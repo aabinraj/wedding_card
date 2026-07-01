@@ -27,6 +27,11 @@ export const SparkleCursor = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Skip entirely on touch-only devices — no cursor, no point running rAF
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    if (!hasFinePointer) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 

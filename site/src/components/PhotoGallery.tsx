@@ -6,12 +6,15 @@ import { FaTimes } from "react-icons/fa";
 
 // Correct paths matching actual filenames (with space before parenthesis, .jpeg extension)
 const images = [
-  "/assets/images/gallerypic (1).jpeg",
-  "/assets/images/gallerypic (2).jpeg",
-  "/assets/images/gallerypic (3).jpeg",
-  "/assets/images/gallerypic (4).jpeg",
-  "/assets/images/gallerypic (5).jpeg",
-  "/assets/images/gallerypic (6).jpeg"
+  "/assets/images/gallerypic (1).webp",
+  "/assets/images/gallerypic (2).webp",
+  "/assets/images/gallerypic (3).webp",
+  "/assets/images/gallerypic (4).webp",
+  "/assets/images/gallerypic (5).webp",
+  "/assets/images/gallerypic (6).webp",
+  "/assets/images/gallerypic (7).webp",
+  "/assets/images/gallerypic (8).webp",
+  "/assets/images/gallerypic (9).webp"
 ];
 
 export const PhotoGallery = () => {
@@ -39,7 +42,7 @@ export const PhotoGallery = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-3 md:gap-4">
-        {images.map((src, i) => (
+        {images.slice(0, 8).map((src, i) => (
           <motion.button
             key={i}
             onClick={() => openLightbox(i)}
@@ -60,6 +63,29 @@ export const PhotoGallery = () => {
           </motion.button>
         ))}
       </div>
+
+      {/* 9th image centred on its own row */}
+      {images.length === 9 && (
+        <div className="flex justify-center mt-3 md:mt-4">
+          <motion.button
+            onClick={() => openLightbox(8)}
+            className="focus:outline-none rounded-xl overflow-hidden shadow-md w-[calc(50%-6px)] md:w-[calc(50%-8px)]"
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 8 * 0.1, duration: 0.5 }}
+          >
+            <img
+              src={images[8]}
+              alt="Gallery 9"
+              className="w-full h-36 md:h-48 object-cover"
+              loading="lazy"
+            />
+          </motion.button>
+        </div>
+      )}
 
       {/* Lightbox */}
       {openIdx !== null &&

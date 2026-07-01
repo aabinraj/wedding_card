@@ -30,3 +30,32 @@ body {
   color: #3D2B2B;
   font-family: "Outfit", sans-serif;
 }
+
+/* ─── Performance: GPU-accelerate falling flower animation ─── */
+@keyframes flowerFall {
+  0%   { transform: translateY(0px) translateZ(0) rotate(0deg); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 0.7; }
+  100% { transform: translateY(110vh) translateZ(0) rotate(720deg); opacity: 0; }
+}
+
+/* ─── Mobile performance: strip expensive blur effects on small screens ─── */
+@media (max-width: 768px) {
+  /* backdrop-blur is very GPU-heavy on mid/low-end phones — disable it */
+  [style*="backdropFilter"],
+  [style*="backdrop-filter"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Promote animated motion elements to their own GPU layer */
+  .motion-safe {
+    will-change: transform;
+  }
+
+  /* Reduce box-shadow complexity */
+  .shadow-xl, .shadow-2xl {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10) !important;
+  }
+}
+

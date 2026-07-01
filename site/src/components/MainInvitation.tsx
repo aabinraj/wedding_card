@@ -12,6 +12,7 @@ import { PhotoGallery } from "./PhotoGallery";
 import { RSVPForm } from "./RSVPForm";
 import { WishbookButton } from "./WishbookButton";
 import { MapButton } from "./MapButton";
+import { ReceptionMapButton } from "./ReceptionMapButton";
 import { ScratchCard } from "./ScratchCard";
 
 const fadeUp = {
@@ -165,9 +166,14 @@ export const MainInvitation = () => {
           <RSVPForm />
         </motion.div>
 
-        {/* Map */}
+        {/* Map – Marriage Hall */}
         <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-center my-10">
           <MapButton />
+        </motion.div>
+
+        {/* Map – Reception */}
+        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-center my-10">
+          <ReceptionMapButton />
         </motion.div>
 
         {/* Final note */}

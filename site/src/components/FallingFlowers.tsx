@@ -12,6 +12,9 @@ export const FallingFlowers = () => {
     const container = containerRef.current;
     if (!container) return;
 
+    const isMobile = window.innerWidth <= 768;
+    const flowerCount = isMobile ? 6 : 18; // drastically fewer on mobile
+
     const images = [
       "/assets/images/FLOWERS (1).webp",
       "/assets/images/FLOWERS (2).webp",
@@ -19,7 +22,7 @@ export const FallingFlowers = () => {
       "/assets/images/FLOWERS (4).webp",
       "/assets/images/FLOWERS (5).webp",
       "/assets/images/heart.webp",
-      "/assets/images/heart.webp", // added twice so hearts appear more often
+      "/assets/images/heart.webp",
     ];
 
     const flowers: HTMLImageElement[] = [];
@@ -27,7 +30,7 @@ export const FallingFlowers = () => {
     const createFlower = () => {
       const img = document.createElement("img");
       img.src = images[Math.floor(Math.random() * images.length)];
-      const size = 20 + Math.random() * 20; // 20–40px
+      const size = 20 + Math.random() * 20;
       img.style.cssText = `
         position: absolute;
         width: ${size}px;
@@ -37,16 +40,16 @@ export const FallingFlowers = () => {
         top: -60px;
         opacity: ${0.5 + Math.random() * 0.5};
         pointer-events: none;
+        will-change: transform;
         animation: flowerFall ${6 + Math.random() * 8}s linear ${Math.random() * 5}s infinite;
         transform: rotate(${Math.random() * 360}deg);
-        filter: drop-shadow(0 2px 4px rgba(197,179,211,0.3));
+        ${isMobile ? "" : "filter: drop-shadow(0 2px 4px rgba(197,179,211,0.3));"}
       `;
       container.appendChild(img);
       flowers.push(img);
     };
 
-    // Create 18 flowers
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < flowerCount; i++) {
       createFlower();
     }
 
@@ -59,10 +62,10 @@ export const FallingFlowers = () => {
     <>
       <style>{`
         @keyframes flowerFall {
-          0%   { transform: translateY(0px) rotate(0deg); opacity: 0; }
+          0%   { transform: translateY(0px) translateZ(0) rotate(0deg); opacity: 0; }
           5%   { opacity: 1; }
           95%  { opacity: 0.7; }
-          100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+          100% { transform: translateY(110vh) translateZ(0) rotate(720deg); opacity: 0; }
         }
       `}</style>
       <div

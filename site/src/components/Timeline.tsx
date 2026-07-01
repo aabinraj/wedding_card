@@ -10,7 +10,7 @@ export const Timeline = () => {
     { date: "20 Aug 2026", title: "Haldi Ceremony", description: "Bride's residence", icon: "🌿" },
     { date: "22 Aug 2026", title: "Thalikettu", description: "Kurumba Bagavathi Temple", icon: "🕉️" },
     { date: "22 Aug 2026", title: "Wedding Ceremony", description: "Sree Narayana Hall", icon: "💍" },
-    { date: "23 Aug 2026", title: "Reception", description: "Venue TBD", icon: "🎉" },
+    { date: "23 Aug 2026", title: "Reception", description: "MSC Convention Centre Meloor", icon: "🎉" },
   ];
 
   return (
@@ -19,16 +19,29 @@ export const Timeline = () => {
       style={{ background: "linear-gradient(135deg, #FFF5F5 0%, #F5E6F0 100%)" }}
     >
       <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-3 mb-3">
+        <motion.div
+          className="flex items-center justify-center gap-3 mb-3"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.45, delay: 0 }}
+        >
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
           <span className="text-xs tracking-[0.25em] uppercase font-outfit" style={{ color: "#C5B3D3" }}>
             Schedule
           </span>
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
-        </div>
-        <h2 className="text-3xl font-great-vibes" style={{ color: "#8B6F7E" }}>
+        </motion.div>
+        <motion.h2
+          className="text-3xl font-great-vibes"
+          style={{ color: "#8B6F7E" }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.14 }}
+        >
           Wedding Timeline
-        </h2>
+        </motion.h2>
       </div>
 
       <div className="relative">
