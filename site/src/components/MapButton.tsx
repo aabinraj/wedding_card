@@ -27,7 +27,7 @@ export const MapButton = () => {
         >
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
           <span className="text-xs tracking-[0.25em] uppercase font-outfit" style={{ color: "#C5B3D3" }}>
-            Venue Location
+            Wedding Ceremony
           </span>
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
         </motion.div>

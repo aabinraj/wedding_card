@@ -51,7 +51,7 @@ export const HaldiCard = () => {
             className="font-outfit space-y-0.5 mb-3 text-[#4A3A1A] max-w-[90%] mx-auto drop-shadow-sm"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ once: true, amount: 0.9 }}
             transition={{ duration: 0.5, delay: 0.26 }}
           >
             <p className="font-extrabold text-sm tracking-wide">Bride&apos;s Residence</p>
@@ -65,7 +65,7 @@ export const HaldiCard = () => {
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.45, delay: 0.39 }}
           >
-            20 Aug 2026 &nbsp;|&nbsp; 12:00 PM – 2:00 PM
+            20 Aug 2026 &nbsp;|&nbsp; Evening
           </motion.div>
         </div>
       </div>

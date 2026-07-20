@@ -67,47 +67,52 @@ export const MainInvitation = () => {
 
           {/* Center Section: Names and Details - Tightly grouped to fit the inner border space */}
           <motion.div
-            className="absolute top-17 left-0 w-full flex flex-col items-center justify-start text-center px-6"
+            className="absolute top-10 md:top-17 left-0 w-full flex flex-col items-center justify-start text-center px-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <div className="h-[1px] w-8 bg-[#8B6F7E]/60" />
-              <span className="text-[10px] tracking-[0.2em] uppercase font-outfit text-[#8B6F7E] font-bold drop-shadow-sm">
-                Thalikettu
+            <div className="flex flex-col items-center justify-center mb-0 md:mb-1">
+              <div className="flex items-center justify-center gap-2">
+                <div className="h-[1px] w-6 bg-[#5A3D4A]/60" />
+                <span className="text-[9px] md:text-[10px] tracking-[0.15em] uppercase font-outfit text-[#5A3D4A] font-bold drop-shadow-sm">
+                  A NEW CHAPTER BEGINS ...
+                </span>
+                <div className="h-[1px] w-6 bg-[#5A3D4A]/60" />
+              </div>
+              <span className="text-[11px] md:text-[12px] tracking-wide font-outfit text-[#5A3D4A] mt-0.5 md:mt-1 font-extrabold drop-shadow-sm">
+                With immense happiness,
               </span>
-              <div className="h-[1px] w-8 bg-[#8B6F7E]/60" />
             </div>
 
             {/* Bride */}
-            <h1 className="text-[2.8rem] leading-none font-great-vibes text-[#5A3D4A] drop-shadow-md mb-0">
+            <h1 className="text-4xl md:text-[2.8rem] leading-[1.1] font-great-vibes text-[#5A3D4A] drop-shadow-md mb-0 mt-1 md:mt-0">
               Sruthi
             </h1>
-            <p className="text-[12px] text-[#4A2D3A] font-bold leading-tight max-w-[90%] drop-shadow-sm">
+            <p className="text-[11px] md:text-[12px] text-[#4A2D3A] font-bold leading-tight max-w-[95%] md:max-w-[90%] drop-shadow-sm">
               D/o Mr. Selvarajan P.N &amp; Mrs. Vanaja A.R<br />
-              <span className="text-[10px] opacity-90 font-medium">Punnakkaparambil house,<br /> Lokamaleswaram PO, Kodungallur</span>
+              <span className="text-[9px] md:text-[10px] opacity-90 font-medium">Punnakkaparambil house,<br /> Lokamaleswaram PO, Kodungallur</span>
             </p>
 
             {/* Weds separator */}
-            <p className="text-base font-great-vibes text-[#8B6F7E] my-0 drop-shadow-sm">weds</p>
+            <p className="text-sm md:text-base font-great-vibes text-[#8B6F7E] my-0 md:my-0.5 drop-shadow-sm">weds</p>
 
             {/* Groom */}
-            <h2 className="text-[2.8rem] leading-none font-great-vibes text-[#5A3D4A] drop-shadow-md mb-0">
+            <h2 className="text-4xl md:text-[2.8rem] leading-[1.1] font-great-vibes text-[#5A3D4A] drop-shadow-md mb-0">
               Mridhul
             </h2>
-            <p className="text-[12px] text-[#4A2D3A] font-bold leading-tight max-w-[90%] mb-2 drop-shadow-sm">
+            <p className="text-[11px] md:text-[12px] text-[#4A2D3A] font-bold leading-tight max-w-[95%] md:max-w-[90%] mb-1.5 md:mb-2 drop-shadow-sm">
               S/o Mr. Manoj &amp; Mrs. Sangeetha<br />
-              <span className="text-[10px] opacity-90 font-medium">Poolani, Chalakudy</span>
+              <span className="text-[9px] md:text-[10px] opacity-90 font-medium">Poolani, Chalakudy</span>
             </p>
 
             {/* Event Details */}
-            <div className="w-full max-w-[260px] mx-auto">
-              <p className="font-extrabold text-[10px] text-[#4A2D3A] tracking-wide drop-shadow-sm leading-tight">
+            <div className="w-full max-w-[260px] mx-auto mt-0.5 md:mt-0">
+              <p className="font-extrabold text-[9px] md:text-[10px] text-[#4A2D3A] tracking-wide drop-shadow-sm leading-tight">
                 Kodungallur Sree Kurumba Bagavathi Temple
               </p>
-              <p className="text-[10px] text-[#5A3D4A] font-bold mt-0.5 drop-shadow-sm">22 August 2026</p>
-              <p className="text-[10px] text-[#5A3D4A] font-bold mt-1 bg-white/70 px-3 py-1 rounded-full inline-block backdrop-blur-md border border-[#8B6F7E]/30 shadow-sm whitespace-nowrap">
+              <p className="text-[9px] md:text-[10px] text-[#5A3D4A] font-bold mt-0.5 drop-shadow-sm">22 August 2026</p>
+              <p className="text-[9px] md:text-[10px] text-[#5A3D4A] font-bold mt-1 bg-white/70 px-3 py-1 rounded-full inline-block backdrop-blur-md border border-[#8B6F7E]/30 shadow-sm whitespace-nowrap">
                 8:30 AM – 9:00 AM
               </p>
             </div>
@@ -125,7 +130,7 @@ export const MainInvitation = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.7 }}
         >
           <ScratchCard />
         </motion.section>
@@ -141,43 +146,43 @@ export const MainInvitation = () => {
         </motion.div>
 
         {/* Event cards */}
-        <motion.div custom={3} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div custom={3} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
           <VenueCard />
         </motion.div>
 
-        <motion.div custom={4} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div custom={4} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
           <HaldiCard />
         </motion.div>
 
 
 
         {/* Timeline */}
-        <motion.div custom={7} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div custom={7} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
           <Timeline />
         </motion.div>
 
         {/* Photo Gallery */}
-        <motion.div custom={8} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div custom={8} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
           <PhotoGallery />
         </motion.div>
 
         {/* RSVP */}
-        <motion.div custom={9} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div custom={9} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
           <RSVPForm />
         </motion.div>
 
         {/* Map – Marriage Hall */}
-        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-center my-10">
+        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="text-center my-10">
           <MapButton />
         </motion.div>
 
         {/* Map – Reception */}
-        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-center my-10">
+        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="text-center my-10">
           <ReceptionMapButton />
         </motion.div>
 
         {/* Final note */}
-        <motion.div custom={11} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div custom={11} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
           <FinalNote />
         </motion.div>
 
