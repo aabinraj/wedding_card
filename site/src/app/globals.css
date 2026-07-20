@@ -29,6 +29,7 @@ body {
   background: #FBEFEF;
   color: #3D2B2B;
   font-family: "Outfit", sans-serif;
+  color-scheme: light;
 }
 
 /* ─── Performance: GPU-accelerate falling flower animation ─── */

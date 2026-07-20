@@ -5,8 +5,8 @@
  * The files are expected at `public/assets/audio/`.
  */
 
-let sealAudio: HTMLAudioElement | null = null;
 let bgAudio: HTMLAudioElement | null = null;
+let visibilityListenerAdded = false;
 
 export const initAudio = () => {
   if (!bgAudio) {
@@ -16,10 +16,18 @@ export const initAudio = () => {
     bgAudio.preload = "auto";
     bgAudio.volume = 0.5;
   }
-};
 
-export const playSeal = () => {
-  // Wax seal sound removed as per user request
+  if (!visibilityListenerAdded && typeof document !== "undefined") {
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        bgAudio?.pause();
+      } else {
+        // Optionally resume here: bgAudio?.play(); 
+        // But usually safer to just pause on exit to stop unwanted noise.
+      }
+    });
+    visibilityListenerAdded = true;
+  }
 };
 
 export const playBackground = () => {

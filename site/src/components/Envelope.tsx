@@ -2,18 +2,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useAppState } from "../context/AppStateContext";
-import { playSeal, playBackground } from "../lib/audio";
+import { playBackground } from "../lib/audio";
 
 /**
  * Envelope component – shows the wedding envelope image (which contains a wax seal).
- * Clicking anywhere on it plays the seal sound, starts background music,
+ * Clicking anywhere on it starts background music,
  * and triggers a slide-up exit animation before revealing the invitation.
  */
 export const Envelope = () => {
   const { setIsOpen } = useAppState();
 
   const handleClick = () => {
-    playSeal();
     playBackground();
     setIsOpen(true);
   };
