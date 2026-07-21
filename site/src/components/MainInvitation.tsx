@@ -62,7 +62,7 @@ export const MainInvitation = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-          
+
           </motion.div>
 
           {/* Center Section: Names and Details - Tightly grouped to fit the inner border space */}
@@ -113,7 +113,7 @@ export const MainInvitation = () => {
               </p>
               <p className="text-[9px] md:text-[10px] text-[#5A3D4A] font-bold mt-0.5 drop-shadow-sm">22 August 2026</p>
               <p className="text-[9px] md:text-[10px] text-[#5A3D4A] font-bold mt-1 bg-white/70 px-3 py-1 rounded-full inline-block backdrop-blur-md border border-[#8B6F7E]/30 shadow-sm whitespace-nowrap">
-                8:30 AM – 9:00 AM
+                10:30 AM – 11:00 AM
               </p>
             </div>
           </motion.div>
