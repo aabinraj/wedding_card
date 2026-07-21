@@ -3,9 +3,9 @@ import "./globals.css";
 import { AppStateProvider } from "../context/AppStateContext";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
   title: "Sruthi & Mridhul Wedding Invitation",
   description: "You're invited to celebrate our special day! Tap to open the invitation.",
-  colorScheme: "light",
   openGraph: {
     title: "Sruthi & Mridhul | Wedding Invitation 💒",
     description: "You're cordially invited to celebrate the union of Sruthi & Mridhul. Tap to open your invitation!",
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     title: "Sruthi & Mridhul | Wedding Invitation 💒",
     description: "You're cordially invited to celebrate the union of Sruthi & Mridhul. Tap to open!",
   },
+};
+
+export const viewport = {
+  colorScheme: "light",
 };
 
 export default function RootLayout({
