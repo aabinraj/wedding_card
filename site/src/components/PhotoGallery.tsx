@@ -49,10 +49,10 @@ export const PhotoGallery = () => {
             className="focus:outline-none rounded-xl overflow-hidden shadow-md"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ delay: i * 0.04, duration: 0.25 }}
           >
             <img
               src={src}
@@ -72,10 +72,10 @@ export const PhotoGallery = () => {
             className="focus:outline-none rounded-xl overflow-hidden shadow-md w-[calc(50%-6px)] md:w-[calc(50%-8px)]"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: 8 * 0.1, duration: 0.5 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ delay: 8 * 0.04, duration: 0.25 }}
           >
             <img
               src={images[8]}

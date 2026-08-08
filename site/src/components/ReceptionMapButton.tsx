@@ -24,10 +24,10 @@ export const ReceptionMapButton = () => {
       <div className="text-center mb-8">
         <motion.div
           className="flex items-center justify-center gap-3 mb-3"
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.7 }}
-          transition={{ duration: 0.45, delay: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.25, delay: 0 }}
         >
           <div className="h-[1px] w-10" style={{ background: "#C5B3D3" }} />
           <span className="text-xs tracking-[0.25em] uppercase font-outfit" style={{ color: "#C5B3D3" }}>
@@ -38,19 +38,19 @@ export const ReceptionMapButton = () => {
         <motion.h2
           className="text-3xl font-great-vibes mb-2"
           style={{ color: "#8B6F7E" }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.7 }}
-          transition={{ duration: 0.5, delay: 0.12 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.25, delay: 0.05 }}
         >
           MSC Convention Centre
         </motion.h2>
         <motion.p
           className="font-outfit text-sm text-[#5A3D4A]"
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.7 }}
-          transition={{ duration: 0.45, delay: 0.24 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.2, delay: 0.08 }}
         >
           Meloor, Poolany, Thrissur, Kerala – 680311
         </motion.p>
@@ -58,10 +58,10 @@ export const ReceptionMapButton = () => {
 
       <motion.div
         className="w-full rounded-2xl overflow-hidden shadow-inner border border-white"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.2 }}
       >
         <iframe
           src={embedUrl}

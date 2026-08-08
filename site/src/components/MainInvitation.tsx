@@ -16,11 +16,11 @@ import { ReceptionMapButton } from "./ReceptionMapButton";
 import { ScratchCard } from "./ScratchCard";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
+    transition: { delay: i * 0.05, duration: 0.3, ease: "easeOut" as const },
   }),
 };
 
@@ -162,7 +162,7 @@ export const MainInvitation = () => {
         </motion.div>
 
         {/* Photo Gallery */}
-        <motion.div custom={8} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
+        <motion.div custom={4} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
           <PhotoGallery />
         </motion.div>
 
@@ -172,12 +172,12 @@ export const MainInvitation = () => {
         </motion.div>
 
         {/* Map – Marriage Hall */}
-        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="text-center my-10">
+        <motion.div custom={2} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-center my-10">
           <MapButton />
         </motion.div>
 
         {/* Map – Reception */}
-        <motion.div custom={10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="text-center my-10">
+        <motion.div custom={2} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-center my-10">
           <ReceptionMapButton />
         </motion.div>
 
