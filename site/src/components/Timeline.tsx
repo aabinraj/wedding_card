@@ -10,7 +10,7 @@ export const Timeline = () => {
     { date: "20 Aug 2026", title: "Haldi Ceremony", description: "Bride's residence", icon: "🌿" },
     { date: "22 Aug 2026", title: "Thalikettu", description: "Kurumba Bagavathi Temple", icon: "🕉️" },
     { date: "22 Aug 2026", title: "Wedding Ceremony", description: "Sree Narayana Hall", icon: "💍" },
-    { date: "23 Aug 2026", title: "Reception", description: "MSC Convention Centre Meloor", icon: "🎉" },
+    { date: "22 Aug 2026", title: "Reception", description: "MSC Convention Centre Meloor", icon: "🎉" },
   ];
 
   return (
